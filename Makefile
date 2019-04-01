@@ -4,4 +4,4 @@ all:
 test:
 	./stdout
 clean:
-	rm stdout.exe stdout
+	rm stdout
