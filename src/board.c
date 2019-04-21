@@ -1,3 +1,4 @@
+#include <board_print_plain.h>
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -103,6 +104,11 @@ bool Do2Steps(char (*board)[9], string s)
     }
     cout << endl << endl;
 
+    for (i = 0; i <= 7; i++) {
+        cout << s[i];
+    }
+    cout << endl << endl;
+
     if (s[5] != 'x' && x1 != x) {
         cout << "WRONG INPUT" << endl;
         break;
@@ -144,6 +150,8 @@ bool Do2Steps(char (*board)[9], string s)
         break;
         return 0;
     }
+
+    PrintBoard(board);
 
     ////////////////////////////
 
@@ -288,5 +296,7 @@ bool Do2Steps(char (*board)[9], string s)
         break;
         return 0;
     }
+
+    PrintBoard(board);
     return 1;
 }
