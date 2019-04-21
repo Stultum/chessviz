@@ -135,13 +135,6 @@ void Do2Steps(char (*board)[9], string s)
         break;
     }
 
-    for (i = 0; i < n; i++) {
-        for (j = 0; j < n; j++) {
-            cout << board[i][j] << ' ';
-        }
-        cout << endl;
-    }
-
     ////////////////////////////
 
     step = s[9];
