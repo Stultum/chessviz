@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-void Do2Steps(char (*board)[9], string s)
+bool Do2Steps(char (*board)[9], string s)
 {
     har step = s[3];
     step = s[3];
@@ -25,6 +25,7 @@ void Do2Steps(char (*board)[9], string s)
     else {
         cout << "WRONG INPUT" << endl;
         break;
+        return 0;
     }
     step = s[4];
     if (step == '1')
@@ -46,6 +47,7 @@ void Do2Steps(char (*board)[9], string s)
     else {
         cout << "WRONG INPUT" << endl;
         break;
+        return 0;
     }
 
     step = s[7];
@@ -68,6 +70,7 @@ void Do2Steps(char (*board)[9], string s)
     else {
         cout << "WRONG INPUT" << endl;
         break;
+        return 0;
     }
 
     step = s[6];
@@ -90,6 +93,7 @@ void Do2Steps(char (*board)[9], string s)
     else {
         cout << "WRONG INPUT" << endl;
         break;
+        return 0;
     }
 
     cout << endl;
@@ -102,16 +106,19 @@ void Do2Steps(char (*board)[9], string s)
     if (s[5] != 'x' && x1 != x) {
         cout << "WRONG INPUT" << endl;
         break;
+        return 0;
     }
 
     if (s[5] == 'x' && x1 == x) {
         cout << "WRONG INPUT" << endl;
         break;
+        return 0;
     }
 
     if (y1 >= y) {
         cout << "WRONG INPUT" << endl;
         break;
+        return 0;
     }
 
     if (s[5] == 'x') {
@@ -121,6 +128,7 @@ void Do2Steps(char (*board)[9], string s)
         } else {
             cout << "WRONG INPUT" << endl;
             break;
+            return 0;
         }
     } else if (s[5] == '-') {
         if (board[y1][x1] == ' ') {
@@ -129,10 +137,12 @@ void Do2Steps(char (*board)[9], string s)
         } else {
             cout << "WRONG INPUT" << endl;
             break;
+            return 0;
         }
     } else {
         cout << "WRONG INPUT" << endl;
         break;
+        return 0;
     }
 
     ////////////////////////////
@@ -157,6 +167,7 @@ void Do2Steps(char (*board)[9], string s)
     else {
         cout << "WRONG INPUT" << endl;
         break;
+        return 0;
     }
 
     step = s[10];
@@ -179,6 +190,7 @@ void Do2Steps(char (*board)[9], string s)
     else {
         cout << "WRONG INPUT" << endl;
         break;
+        return 0;
     }
 
     step = s[13];
@@ -201,6 +213,7 @@ void Do2Steps(char (*board)[9], string s)
     else {
         cout << "WRONG INPUT" << endl;
         break;
+        return 0;
     }
 
     step = s[12];
@@ -223,6 +236,7 @@ void Do2Steps(char (*board)[9], string s)
     else {
         cout << "WRONG INPUT" << endl;
         break;
+        return 0;
     }
 
     cout << endl;
@@ -237,15 +251,18 @@ void Do2Steps(char (*board)[9], string s)
     if (s[11] != 'x' && x1 != x) {
         cout << "WRONG INPUT" << endl;
         break;
+        return 0;
     }
     if (s[11] == 'x' && x1 == x) {
         cout << "WRONG INPUT" << endl;
         break;
+        return 0;
     }
 
     if (y1 <= y) {
         cout << "WRONG INPUT" << endl;
         break;
+        return 0;
     }
 
     if (s[11] == 'x') {
@@ -255,6 +272,7 @@ void Do2Steps(char (*board)[9], string s)
         } else {
             cout << "WRONG INPUT" << endl;
             break;
+            return 0;
         }
     } else if (s[11] == '-') {
         if (board[y1][x1] == ' ') {
@@ -263,9 +281,12 @@ void Do2Steps(char (*board)[9], string s)
         } else {
             cout << "WRONG INPUT" << endl;
             break;
+            return 0;
         }
     } else {
         cout << "WRONG INPUT" << endl;
         break;
+        return 0;
     }
+    return 1;
 }
