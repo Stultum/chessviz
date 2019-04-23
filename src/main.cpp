@@ -19,7 +19,7 @@ int main()
                         {' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'}};
 
     string s;
-    ifstream file("mnt /c/ccccc/chessviz/bin/game.txt");
+    ifstream file("mnt /c/ccccc/chessviz/bin/chess.txt");
 
     while (getline(file, s)) {
         check = Do2Steps(board, s);
