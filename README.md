@@ -1,2 +1,2 @@
 # chessviz
-https://travis-ci.com/Stultum/chessviz.svg?branch=master
+[![Build Status](https://travis-ci.com/Stultum/chessviz.svg?branch=develop)](https://travis-ci.com/Stultum/chessviz)
