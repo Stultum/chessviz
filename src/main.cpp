@@ -8,7 +8,6 @@ using namespace std;
 int main()
 {
     bool check;
-    int i, j;
     char board[9][9] = {{'8', 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'},
                         {'7', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'},
                         {'6', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
