@@ -1,17 +1,21 @@
-source = src/main.cpp src/board.cpp src/board_print_plain.cpp
-executable = bin/chess
-objects = build/main.o build/board.o build/board_print_plain.o
+PP = g++
+CFLAGS = -c -Wall -Werror
 
-all: $(executable)
+all: bin/chess
 
-$(executable):$(objects)
-	g++ $(objects) -o $@
+bin/chess: build/main.o build/board.o build/board_print_plain.o
+	$(PP) -Wall -Werror build/main.o build/board.o build/board_print_plain.o -o $@
+	
+build/main.o: src/main.cpp
+	$(PP) $(CFLAGS) src/main.cpp -o $@
 
-build/%.o: src/%.cpp
-	g++ -c $< -o $@
+build/board.o: src/board.cpp
+	$(PP) $(CFLAGS) src/board.cpp -o $@
 
-
-.PHONY: clean
+build/board_print_plain.o: src/board_print_plain.cpp
+	$(PP) $(CFLAGS) src/board_print_plain.cpp -o $@
+	
+.PHONY:clean
 
 clean:
 	rm -rf build/*.o bin/chess
