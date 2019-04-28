@@ -4,4 +4,4 @@ clang-format
 .vscode
 *.o
 bin/chess
-bin/chess.txt
+bin/game.txt
