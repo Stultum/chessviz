@@ -103,7 +103,7 @@ bool Do2Steps(char (*board)[9], string s)
     }
     cout << endl << endl;
 
-    if (board[y][x] == 'P') {
+    if (board[y][x] != 'P') {
         cout << "WRONG INPUT" << endl;
         return 0;
     }
@@ -255,7 +255,7 @@ bool Do2Steps(char (*board)[9], string s)
         return 0;
     }
 
-    if (board[y][x] == 'p') {
+    if (board[y][x] != 'p') {
         cout << "WRONG INPUT" << endl;
         return 0;
     }
