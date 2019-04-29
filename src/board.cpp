@@ -103,10 +103,10 @@ bool Do2Steps(char (*board)[9], string s)
     }
     cout << endl << endl;
 
-    for (i = 0; i <= 7; i++) {
-        cout << s[i];
+    if (board[y][x] == ' ') {
+        cout << "WRONG INPUT" << endl;
+        return 0;
     }
-    cout << endl << endl;
 
     if (s[5] != 'x' && x1 != x) {
         cout << "WRONG INPUT" << endl;
