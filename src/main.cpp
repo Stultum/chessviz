@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-    bool check;
+    int check;
     FILE* mf;
     char* estr;
     char board[9][9] = {{'8', 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'},
@@ -44,13 +44,13 @@ int main()
         int len = strlen(estr);
         cout << len << endl;
         if (len == 16) {
-            check = Do2Steps(board, str);
+            check = Do2StepsPawns(board, str);
             if (check == 0) {
                 cout << "WRONG INPUT, PROBLEM IN STRING: " << str << endl;
                 break;
             }
         } else if (len == 18) {
-            check = Do2Steps(board, str);
+            check = Do2StepsOther(board, str);
             if (check == 0) {
                 cout << "WRONG INPUT, PROBLEM IN STRING: " << str << endl;
                 break;

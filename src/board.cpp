@@ -5,7 +5,7 @@
 
 using namespace std;
 
-bool Do2Steps(char (*board)[9], char* s)
+int Do2StepsPawns(char (*board)[9], char* s)
 {
     int x, y, x1, y1, i;
     char step = s[3];
@@ -296,5 +296,10 @@ bool Do2Steps(char (*board)[9], char* s)
     }
 
     PrintBoard(board);
+    return 1;
+}
+
+int Do2StepsOther(char (*board)[9], char* s)
+{
     return 1;
 }
