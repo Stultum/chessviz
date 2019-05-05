@@ -1,4 +1,5 @@
 #include "board.h"
+#include "board_print_plain.h"
 #include <fstream>
 #include <iostream>
 #include <stdio.h>
@@ -44,17 +45,55 @@ int main()
         int len = strlen(estr);
         cout << len << endl;
         if (len == 16) {
-            check = Do2StepsPawns(board, str);
+            check = DoStepPawnW(board, str);
             if (check == 0) {
                 cout << "WRONG INPUT, PROBLEM IN STRING: " << str << endl;
                 break;
             }
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 9; j++) {
+                    cout << board[i][j] << ' ';
+                }
+                cout << endl;
+            }
+            // PrintBoard(board);
+            check = DoStepPawnB(board, str);
+            if (check == 0) {
+                cout << "WRONG INPUT, PROBLEM IN STRING: " << str << endl;
+                break;
+            }
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 9; j++) {
+                    cout << board[i][j] << ' ';
+                }
+                cout << endl;
+            }
+            // PrintBoard(board);
         } else if (len == 18) {
-            check = Do2StepsOther(board, str);
+            check = DoStepOtherW(board, str);
             if (check == 0) {
                 cout << "WRONG INPUT, PROBLEM IN STRING: " << str << endl;
                 break;
             }
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 9; j++) {
+                    cout << board[i][j] << ' ';
+                }
+                cout << endl;
+            }
+            // PrintBoard(board);
+            check = DoStepOtherB(board, str);
+            if (check == 0) {
+                cout << "WRONG INPUT, PROBLEM IN STRING: " << str << endl;
+                break;
+            }
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 9; j++) {
+                    cout << board[i][j] << ' ';
+                }
+                cout << endl;
+            }
+            // PrintBoard(board);
         }
     }
     printf("Закрытие файла : ");

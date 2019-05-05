@@ -1,11 +1,9 @@
-#include "board_print_plain.h"
-#include <fstream>
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-int Do2StepsPawns(char (*board)[9], char* s)
+int DoStepPawnW(char (*board)[9], char* s)
 {
     int x, y, x1, y1, i;
     char step = s[3];
@@ -149,11 +147,15 @@ int Do2StepsPawns(char (*board)[9], char* s)
         return 0;
     }
 
-    PrintBoard(board);
+    return 1;
+}
 
-    ////////////////////////////
+////////////////////////////
 
-    step = s[9];
+int DoStepPawnB(char (*board)[9], char* s)
+{
+    int x, y, x1, y1, i;
+    char step = s[9];
     if (step == 'a')
         x = 1;
     else if (step == 'b')
@@ -295,13 +297,12 @@ int Do2StepsPawns(char (*board)[9], char* s)
         return 0;
     }
 
-    PrintBoard(board);
     return 1;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-int Do2StepsOther(char (*board)[9], char* s)
+int DoStepOtherW(char (*board)[9], char* s)
 {
     char figure;
     int x, y, x1, y1, i;
@@ -412,6 +413,27 @@ int Do2StepsOther(char (*board)[9], char* s)
         return 0;
     }
 
+    if (figure == 'B') {
+        if (x1 == x || y1 == y) {
+            cout << "WRONG INPUT" << endl;
+            return 0;
+        }
+    }
+
+    if (figure == 'R') {
+        if (x1 != x || y1 != y) {
+            cout << "WRONG INPUT" << endl;
+            return 0;
+        }
+    }
+
+    if (figure == 'K') {
+        if (abs(x1 - x) != 1 || abs(y1 - y) != 1) {
+            cout << "WRONG INPUT" << endl;
+            return 0;
+        }
+    }
+
     if (board[y][x] == ' ') {
         cout << "WRONG INPUT5" << endl;
         return 0;
@@ -453,11 +475,16 @@ int Do2StepsOther(char (*board)[9], char* s)
         return 0;
     }
 
-    PrintBoard(board);
+    return 1;
+}
 
-    ////////////////////////////
+////////////////////////////
 
-    step = s[11];
+int DoStepOtherB(char (*board)[9], char* s)
+{
+    char figure;
+    int x, y, x1, y1, i;
+    char step = s[11];
     figure = s[10];
     if (figure == 'B')
         figure = 'b';
@@ -581,6 +608,27 @@ int Do2StepsOther(char (*board)[9], char* s)
         return 0;
     }
 
+    if (figure == 'b') {
+        if (x1 == x || y1 == y) {
+            cout << "WRONG INPUT" << endl;
+            return 0;
+        }
+    }
+
+    if (figure == 'r') {
+        if (x1 != x || y1 != y) {
+            cout << "WRONG INPUT" << endl;
+            return 0;
+        }
+    }
+
+    if (figure == 'k') {
+        if (abs(x1 - x) != 1 || abs(y1 - y) != 1) {
+            cout << "WRONG INPUT" << endl;
+            return 0;
+        }
+    }
+
     //  if (s[13] != 'x' && x1 != x) {
     //     cout << "WRONG INPUT7" << endl;
     //    return 0;
@@ -616,6 +664,5 @@ int Do2StepsOther(char (*board)[9], char* s)
         return 0;
     }
 
-    PrintBoard(board);
     return 1;
 }
