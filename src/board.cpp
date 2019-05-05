@@ -427,13 +427,6 @@ int DoStepOtherW(char (*board)[9], char* s)
         }
     }
 
-    if (figure == 'K') {
-        if (abs(x1 - x) != 1 || abs(y1 - y) != 1) {
-            cout << "WRONG INPUT" << endl;
-            return 0;
-        }
-    }
-
     if (board[y][x] == ' ') {
         cout << "WRONG INPUT5" << endl;
         return 0;
@@ -617,13 +610,6 @@ int DoStepOtherB(char (*board)[9], char* s)
 
     if (figure == 'r') {
         if (x1 != x || y1 != y) {
-            cout << "WRONG INPUT" << endl;
-            return 0;
-        }
-    }
-
-    if (figure == 'k') {
-        if (abs(x1 - x) != 1 || abs(y1 - y) != 1) {
             cout << "WRONG INPUT" << endl;
             return 0;
         }
