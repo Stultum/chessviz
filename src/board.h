@@ -5,6 +5,6 @@
 
 using namespace std;
 
-bool Do2Steps(char (*board)[9], string s);
+bool Do2Steps(char (*board)[9], char* s);
 
 #endif
