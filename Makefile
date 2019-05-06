@@ -22,7 +22,7 @@ bin/test.exe: build/test/tests.o build/test/main.o build/test/board.o
 	$(CC) -Wall build/test/tests.o build/test/main.o build/test/board.o -o $@
 	
 build/test/tests.o: test/tests.c
-	$(CC) -I thirdparty src -c -Wall test/tests.c -o $@
+	$(CC) -I thirdparty -c -Wall test/tests.c -o $@
 
 build/test/main.o: test/main.c
 	$(CC) -I thirdparty -c -Wall test/main.c -o $@	

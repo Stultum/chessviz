@@ -1,5 +1,5 @@
 #include "../src/board.h"
-#include "../thirdparty/ctest.h"
+#include "ctest.h"
 
 CTEST(going_out_of_the_board_pawn_w, check)
 {
